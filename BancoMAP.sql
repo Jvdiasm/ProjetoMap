@@ -1,3 +1,7 @@
+create database projeo;
+
+use projeto;
+
 create table aluno(
 	matricula varchar(50) not null unique,
     nomeA varchar(50) not null,
@@ -30,7 +34,7 @@ create table usuario(
 	id int not null unique auto_increment,
     cpf varchar(50) not null unique,
     nome varchar(50) not null,
-    nome varchar(50) not null,
+    senha varchar(50) not null,
     idContatou int,
     idEnderecou int,
     foreign key (idContatou) references contato (idContato),
@@ -57,10 +61,10 @@ insert into aluno(matricula,nomeA,status)values('8765','THIAGO FRITZ','A');
 insert into aluno(matricula,nomeA,status)values('4321','CESAR COHEN','A');
 insert into aluno(matricula,nomeA,status)values('1010','ERIN PARKER','N');
 insert into aluno(matricula,nomeA,status)values('2020','ARTHUR CERVERO','A');
-insert into contato(email,telefone)values('teste@teste.com','gggg-gggg');
-insert into contato(email,telefone)values('testeG@teste.com','pppp-pppp');
-insert into endereco(bairro,rua,numero)values('centro','rua do teste','7');
-insert into endereco(bairro,rua,numero)values('centro','rua do testeG','8');
+insert into contato(idContato,email,telefone)values(1,'teste@teste.com','gggg-gggg');
+insert into contato(idContato,email,telefone)values(2,'testeG@teste.com','pppp-pppp');
+insert into endereco(idEndereco,bairro,rua,numero)values(1,'centro','rua do teste','7');
+insert into endereco(idEndereco,bairro,rua,numero)values(2,'centro','rua do testeG','8');
 insert into turma(semana1,semana2,semana3,semana4)values('S','N','S','N');
 insert into turma(semana1,semana2,semana3,semana4)values('N','S','N','S');
 insert into turma_aluno(idTurmaT,matriculaT)values(1,'1234');
@@ -70,4 +74,4 @@ insert into turma_aluno(idTurmaT,matriculaT)values(2,'4321');
 insert into turma_aluno(idTurmaT,matriculaT)values(1,'1010');
 insert into turma_aluno(idTurmaT,matriculaT)values(2,'2020');
 insert into usuario(nome,cpf,senha,idContatou,idEnderecou,tipo)values('Diretor','testeDiretor','teste',1,1,1);
-insert into usuario(nome,cpf,senha,idContatou,idEnderecou,tipo)values('Porteiro','testePorteiro','teste',2,2,2);
+insert into usuario(nome,cpf,senha,idContatou,idEnderecou,tipo)values('Porteiro','testePorteiro','teste',9,9,2);
