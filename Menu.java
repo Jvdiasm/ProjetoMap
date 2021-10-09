@@ -19,8 +19,8 @@ public class Menu {
     }
     public void menuWhile(){
         System.out.print("\n\n-------------------------------------MENU-------------------------------------"+
-        "\n1-Login"+
-        "\n0-Sair"+
+        "\n1-LOGIN"+
+        "\n0-SAIR"+
         "\nEscolha: ");
     }
     public void menuEditar(){

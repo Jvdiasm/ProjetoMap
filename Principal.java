@@ -66,7 +66,7 @@ public class Principal {
         Dado dado = new Dado();
         String cpf, senha, sql;
         int tipo;
-        System.out.print("\n\t------------------------LOGIN------------------------"+
+        System.out.print("\n-------------------------------------LOGIN-------------------------------------"+
         "\nCPF: ");
         dado.setCpf(input.nextLine());
         System.out.print("SENHA: ");
@@ -129,7 +129,6 @@ public class Principal {
         Conexao con = new Conexao();
         con.conexao();
         String matricula,sql;
-        int escolha;
         input.nextLine();
         System.out.print("MATRICULA DO ALUNO A SER RELACIONADO: ");
         matricula = input.nextLine();
@@ -250,7 +249,7 @@ public class Principal {
         con.conexao();
         ResultSet rs = con.select(sql);
         try{
-            System.out.print("IDTURMA\t|NOME\t\t|STATUS\t|S1\t|S2\t|S3\t|S4");
+            System.out.print("\nIDTURMA\t|NOME\t\t|STATUS\t|S1\t|S2\t|S3\t|S4");
             while(rs.next()){
                 System.out.print("\n"+rs.getInt("IDTURMA"));
                 System.out.print("\t|"+rs.getString("NOMEA"));
@@ -316,7 +315,8 @@ public class Principal {
                 cadastro();
                 break;
             case 2:
-                System.out.print("\nDIGITE O CPF A SER EDITADO");
+                input.nextLine();
+                System.out.print("\nDIGITE O CPF A SER EDITADO: ");
                 String cpf = input.nextLine();
                 editarCadastro(cpf);
                 break;
@@ -351,7 +351,7 @@ public class Principal {
     } 
     
     public static int check(){
-        System.out.print("\nRETORNAR AO LOGIN?\n1-SIM\n0-NAO\nESCOLHA: ");
+        System.out.print("\n\nRETORNAR AO LOGIN?\n1-SIM\n0-NAO\nESCOLHA: ");
         int i = input.nextInt();
         return i;
     }
